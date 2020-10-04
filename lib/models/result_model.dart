@@ -2,6 +2,8 @@ class ResultModel {
   double areaFloor;
   int piecesByWidth;
   int piecesByLength;
+  double precoWithoutFooter;
+  double precoWithFooter;
 
   ResultModel({
     this.areaFloor,

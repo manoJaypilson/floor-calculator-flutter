@@ -9,8 +9,9 @@ class ResultDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Result'),
-      content: Wrap(
+      title: const Text('Resultados'),
+      content: SingleChildScrollView(
+          child: Wrap(
         children: [
           ListTile(
             title: Text('${result.amountPieces} pisos'),
@@ -33,8 +34,17 @@ class ResultDialog extends StatelessWidget {
             title: Text('${result.areaWithFooter.toStringAsFixed(2)} m²'),
             subtitle: Text('Metragem quadrada com rodapé'),
           ),
+          Divider(),
+          ListTile(
+            title: Text('${result.precoWithoutFooter.toStringAsFixed(2)}'),
+            subtitle: Text('Valor sem rodapé'),
+          ),
+          ListTile(
+            title: Text('${result.precoWithFooter.toStringAsFixed(2)}'),
+            subtitle: Text('Valor com rodapé'),
+          )
         ],
-      ),
+      )),
       actions: [
         FlatButton(
           child: const Text('CONTINUAR'),

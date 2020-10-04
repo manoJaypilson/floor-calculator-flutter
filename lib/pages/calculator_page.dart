@@ -57,6 +57,11 @@ class _CalculatorPageState extends State<CalculatorPage> {
             'Comprimento (centímetros)',
             onSaved: _controller.setFloorLength,
           ),
+          _buildVerticalSpace(),
+          _buildNumberInputField(
+            'Preço  (reais)',
+            onSaved: _controller.setFloorPrice,
+          ),
           _buildVerticalSpace(height: 40),
           _buildCalculateButton(),
         ],

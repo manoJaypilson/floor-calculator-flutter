@@ -1,4 +1,3 @@
-import 'package:floor_calculator/core/theme_app.dart';
 import 'package:floor_calculator/pages/calculator_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Calculadora de Pisos',
-      theme: themeApp,
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
       home: CalculatorPage(),
     );
   }
