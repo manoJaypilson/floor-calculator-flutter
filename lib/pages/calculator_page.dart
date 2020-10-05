@@ -18,6 +18,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Calculadora de pisos'),
+        actions: _clearAllTextButton(),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -26,6 +27,21 @@ class _CalculatorPageState extends State<CalculatorPage> {
         ),
       ),
     );
+  }
+
+  List<Widget> _clearAllTextButton() {
+    return <Widget>[
+      IconButton(
+        icon: Icon(Icons.clear_all),
+        onPressed: _limpar,
+      ),
+    ];
+  }
+
+  void _limpar() {
+    if (_formKey.currentState.toString() != null) {
+      _formKey.currentState.reset();
+    }
   }
 
   _buildForm() {
